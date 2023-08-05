@@ -177,3 +177,87 @@
 
 
 ### Dates ----
+# In R, dates are represented with the Date class. The Date class is designed to
+# handle calendar dates, and makes it easy to perform operations involving dates.
+
+# TODO
+# Create the following date "2012-06-28" using the as.Date() function
+# Store the date into a variable called date1
+
+
+# TODO
+# Check the class of date1 variable using the class() function
+
+
+# TODO
+# Convert the date1 variable into numeric using the as.numeric() function
+
+
+# TODO
+# Create the following date "2012-06-28 17:42" using the as.POSIXct() function
+# Store the date into a variable called date2
+
+
+# TODO
+# Check the class of date2 variable using the class() function
+
+
+# TODO
+# Convert the date2 variable into numeric using the as.numeric() function
+
+
+### Logical ----
+# TRUE or FALSE
+# 1 or 0
+
+# TODO
+# What is the output of TRUE * 5?
+
+
+# TODO
+# What is the output of FALSE * 5?
+
+
+# TODO
+# Assign the value TRUE to the varialbe k
+
+
+# TODO
+# Check the class of variable k using the class() function
+
+
+# TODO
+# Check whether k is logical using the is.logical() function
+
+
+# TODO
+# Can you write TRUE as T?
+# What is the class() of T?
+
+
+# TODO
+# Assign the value 7 to the variable T?
+
+
+# TODO
+# What is the class() of T?
+
+
+# Logical values can result from comparing two numbers, or characters
+# Remember me... (4 * 6) + 5 == 4 * (6 + 5)
+
+# TODO
+# What is the answer to the following
+# 2 ==3
+# 2 != 3
+# 2 < 3
+# 2 <= 3
+# 2 > 3
+# 2 >= 3
+# "data" == "stats"
+# "data" < "stats"
+
+## Vectors ----
+
+
+
