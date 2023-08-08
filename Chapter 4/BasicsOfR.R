@@ -219,7 +219,7 @@
 
 
 # TODO
-# Assign the value TRUE to the varialbe k
+# Assign the value TRUE to the variable k
 
 
 # TODO
