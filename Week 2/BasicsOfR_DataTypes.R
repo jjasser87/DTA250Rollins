@@ -166,5 +166,3 @@
 # 2 >= 3
 # "data" == "stats"
 # "data" < "stats"
-
-## Vectors ----
