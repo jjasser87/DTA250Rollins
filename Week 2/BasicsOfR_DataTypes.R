@@ -35,7 +35,7 @@
 
 
 # TODO
-# Can you do the same as above for the value 2.8? 
+# Can you do the same as above for the value 2.8?
 
 
 # TODO
@@ -88,7 +88,7 @@
 
 ### Dates ----
 # In R, dates are represented with the Date class. The Date class is designed to
-# handle calendar dates, and makes it easy to perform operations involving dates.
+# handle calendar dates, and makes it easy to perform operations involving dates
 
 # TODO
 # Create the following date "2012-06-28" using the as.Date() function

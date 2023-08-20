@@ -7,7 +7,7 @@
 
 ## Basic Math ----
 
-# TODO 
+# TODO
 # Type 1 + 1 below and run your code either using the 'Run' button above
 
 
