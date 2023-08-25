@@ -1,0 +1,121 @@
+---
+title: "R Notebook"
+output: html_notebook
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+## **Palmer Penguins Dataset**
+
+The **`palmerpenguins`** dataset has become a popular alternative to the
+widely-used **`iris`** dataset for data visualization and teaching
+statistical concepts.
+
+### **Variables:**
+
+1.  **species**:
+
+    -   **Type**: Factor
+
+    -   **Levels**:
+
+        -   Adelie
+
+        -   Chinstrap
+
+        -   Gentoo
+
+2.  **island**:
+
+    -   **Type**: Factor
+
+    -   **Levels**:
+
+        -   Biscoe
+
+        -   Dream
+
+        -   Torgersen
+
+3.  **bill_length_mm**:
+
+    -   **Type**: Numeric
+
+    -   **Description**: Length of the penguin's bill in millimeters.
+
+4.  **bill_depth_mm**:
+
+    -   **Type**: Numeric
+
+    -   **Description**: Depth of the penguin's bill in millimeters.
+
+5.  **flipper_length_mm**:
+
+    -   **Type**: Numeric
+
+    -   **Description**: Length of the penguin's flippers in
+        millimeters.
+
+6.  **body_mass_g**:
+
+    -   **Type**: Numeric
+
+    -   **Description**: Penguin's body mass in grams.
+
+7.  **sex**:
+
+    -   **Type**: Factor
+
+    -   **Description**: Sex of the penguin.
+
+8.  **year**:
+
+    -   **Type**: Integer
+
+    -   **Description**: Year of observation.
+
+### **Usage in R:**
+
+To use the dataset in R, follow the steps:
+
+```{r}
+install.packages("palmerpenguins")
+library(palmerpenguins)
+data("penguins")
+head(penguins)
+```
+
+### **Advantages of Using `palmerpenguins` over `iris`:**
+
+-   **Diversity of Data Types**: The dataset includes continuous,
+    categorical, and ordinal variables.
+
+-   **Missing Data**: Contains some missing values, making it
+    representative of real-world datasets.
+
+-   **Ethical Considerations**: Avoids controversies associated with
+    Ronald A. Fisher and the **`iris`** dataset.
+
+-   **Engagement**: Penguins are engaging and charismatic!
+
+## Plotting in R Notebook
+
+Let us create the same plot we did in the Simple R Script few days ago.
+
+```{r}
+install.packages("tidyverse")
+library(ggplot2)
+
+ggplot(
+  data = penguins,
+  mapping = aes(x = flipper_length_mm,
+                y = body_mass_g,
+                color = species)
+) +
+  geom_point()
+```
+
+## TODO
+
+Please save your updates and Preview it.
