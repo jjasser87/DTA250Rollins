@@ -49,3 +49,78 @@
 
 #TODO
 # Find the square root of x using the sqrt() function
+
+
+#### The : operator ----
+# The : operator is a shortcut which generates a sequence of consecutive numbers
+# in either direction
+
+# TODO
+# Generate the number sequence starting at 1 and ending at 10 using :
+
+
+#TODO
+# Can you generate the number sequence backwards from 10 to 1 using :
+
+
+#TODO
+# How about number sequence from -2 to 3
+
+
+#TODO
+# or 5 to -7
+
+
+#TODO
+# Create a vector from 1 to 10 using : and store it in the variable x
+# Create a vector from -5 to 4 using : and store it in the variable y
+
+
+#TODO
+# Add x and y
+# Subtract y from x
+# Multiply x and y
+# Divide x and y
+# Raise x to the power of y
+
+
+#TODO
+# Can you check the length of each using the length() function
+
+
+#TODO
+# Can you check the length of the summation of both vectors using length()
+
+
+#TODO
+# What would happen if you execute the below code
+# x + c(1,2)
+
+
+#TODO
+# How about the following
+# x + c(1,2,3)
+
+
+#TODO
+# Try and explain the following
+# x <= 5
+
+
+#TODO
+# OK. Try x > y
+
+
+#TODO
+# Maybe x < y
+
+
+#TODO
+# To test whether all the resulting elements are True, use the all() function
+
+
+#TODO
+# To test whether any of the elements is True, use the any() function
+
+
+
