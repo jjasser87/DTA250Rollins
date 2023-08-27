@@ -1,6 +1,8 @@
 # DTA250 - Fall 2023
 # Jasser Jasser (JJ)
 
+x <- 2
+
 # Basics of R ----
 # In this chapter we will learn about R's mathematical capabilities, variables,
 # functions, and data types
@@ -16,6 +18,10 @@
 
 # TODO
 # Can you check whether x is numeric using the is.numeric() function?
+
+
+# TODO
+# Can you check if x is an integer using the is.integer() function?
 
 
 # TODO

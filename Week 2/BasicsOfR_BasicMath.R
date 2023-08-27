@@ -9,6 +9,8 @@
 
 # TODO
 # Type 1 + 1 below and run your code either using the 'Run' button above
+# or using the 'Run' command shortcut... Hover over the 'Run' command button
+# above to find out what is the shortcut
 
 
 # TODO
@@ -30,6 +32,13 @@
 # TODO
 # Is the answer for (4 * 6) + 5 the same for 4 * (6 + 5)? Write your answer as 
 # a comment
+# Wait a minute? What is a comment?
+
+
+# Have you ever heard of PEMDAS (Parenthesis, Exponents, Multiplication, 
+# Division, Addition, and Subtraction)?
+# The students' meme (https://www.pinterest.com/pin/552042866800890781/)
+# The professors' meme (https://imgflip.com/i/3es7bu)
 
 
 ## Variables ----
@@ -43,7 +52,7 @@
 
 
 # TODO
-# Assign the value 5 to the variable y using the <- assignment operator
+# Assign the value 5 to the variable y using the = assignment operator
 
 
 # TODO
@@ -94,6 +103,17 @@
 #   operations, it might interfere with your current operations, particularly if
 #   you're reusing variable names. Removing variables when you're done with them
 #   can help avoid this kind of error.
+
+#TODO
+# Remove the variable j again using the rm() function
+
+
+#TODO
+# Create a variable called var and assign the value 17 to it
+
+
+#TODO
+# Type in "Var" below and tell me what happens.
 
 
 
