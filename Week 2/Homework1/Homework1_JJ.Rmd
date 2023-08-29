@@ -1,0 +1,15 @@
+---
+title: "Homework 1"
+output: html_notebook
+name: "Jasser Jasser"
+---
+
+# Question 1
+
+## Create Variables and Perform Operations
+
+Creating the variable "num1"
+
+```{r}
+num1 <- 10
+```
