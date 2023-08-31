@@ -22,7 +22,8 @@
 # Let us start
 
 #TODO
-# create a vector of the numbers from 1 to 10 using the c() function
+# Create a vector of the numbers from 1 to 10 using the c() function
+# Sore it in a variable called x
 
 
 ### Vector Operations ----
@@ -123,4 +124,80 @@
 # To test whether any of the elements is True, use the any() function
 
 
+#The nchar() function also acts on each element of a vector
 
+#TODO
+# Create a vector, name it q and store the following values in it
+c("Hockey", "Football", "Baseball", "Curling", "Rugby", "Lacrosse", "Basketball"
+  , "Tennis", "Cricket", "Soccer")
+
+
+#TODO
+# Run the nchar() function with the q variable as the parameter? What happened?
+
+
+#TODO
+# Run the nchar() function with the y variable as the parameter? What happened?
+
+
+# Accessing individual elements of a vector is done using the square brackets []
+# The first element of x is retrieved by typing x[1]
+# The first two elements by x[1:2]
+# Non=consecutive elements by x[c(1,4)]
+
+#TODO
+# Try retrieving the first element of x
+
+
+#TODO
+# Try retrieving the first 4 elements in x
+
+
+#TODO
+# Try retrieving the first, fourth, sixth, and ninth elements in x
+
+
+# Giving names to vectors!! Huh? What is that? Isn't that the variable name?
+# It is possible to give names to a vector either during creation of after the 
+# fact.
+# An example:
+c(One="a", Two="b", Last="z")
+
+#TODO
+# Create a vector from 1 to 3 and store it in the variable w
+
+
+# Name the elements in w as follows "a", "b", "c" using the names() function
+
+
+### Factor Vectors ----
+# A factor is a data structure used for fields that take on a limited, 
+# and usually fixed, number of possible values (categorical data). 
+# Factors are an integral part of the R programming language and are very useful
+# in statistical modeling and data analysis.
+
+#TODO
+# Store the following vector in the variable q2
+c(q, "Hockey", "Lacrosse", "Hockey", "Water Polo", "Hockey", "Lacrosse")
+# Wait a minute! what is q doing in there? 
+# (https://www.nytimes.com/2022/02/19/technology/qanon-messages-authors.html)
+# q is the vector we created above, we are using it and adding some more values
+# to it and storing all of these values into the new variable q2
+
+
+#TODO
+# Convert q2 into a factor vector using the as.factor() function and store it
+# into the variable q2Factor
+# Notice the Levels of q2Factor
+
+
+#TODO
+# Convert q2Factor into numeric using the as.numeric() function?
+# Notice something?
+
+
+# What if you want to define the levels yourself? Yes. You can do that.
+
+#TODO
+# Use the below vector and follow my instructions
+c("High School", "College", "Masters", "Doctorate")
