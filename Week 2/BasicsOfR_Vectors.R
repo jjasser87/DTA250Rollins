@@ -79,7 +79,7 @@
 
 #TODO
 # Add x and y
-# Subtract y from x
+# Subtract y from x (The Devil...)
 # Multiply x and y
 # Divide x and y
 # Raise x to the power of y
