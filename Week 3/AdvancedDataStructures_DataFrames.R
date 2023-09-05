@@ -102,6 +102,13 @@ c("a", "b", "c", "d", "e", "f", "g", "h", "i", "jj")
 # Can you access the Sport column in df using the $ operator
 
 
+#TODO
+# What is the class of df$Sport?
+
+
+# What is the class of df["Sport"]
+
+
 # Similar to vectors, data frames allow us to access individual elements by their
 # position using []. However, two positions need to be specified.
 # The first is the row number and the second is the column number
