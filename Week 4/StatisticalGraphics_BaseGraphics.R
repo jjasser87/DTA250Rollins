@@ -4,6 +4,14 @@
 # Statistical Graphics ----
 # Statistical graphics are a way to visually communicate information about data
 
+# First, we need to install the ggplot2 package (if it is not installed)
+
+#TODO
+# Install the ggplot2 package
+# use the install.packages() function
+# set the package name to "ggplot2"
+
+
 # Let us start by loading the ggplot2 package 
 # (ggplot always reminds me of GG Allin, the punk rocker. Don't look him up!)
 # (You don't want to be traumatized)
