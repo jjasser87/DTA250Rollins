@@ -34,6 +34,7 @@
 
 # Diamonds (https://www.youtube.com/watch?v=lWA2pjMjpBs)
 # Carat (https://www.youtube.com/watch?v=1TsVjvEkc4s)
+# (🤮 I hate these songs)
 
 
 ## Histogram and Densities ----
