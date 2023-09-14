@@ -1,7 +1,7 @@
 # DTA250 - Fall 2023
 # Homework 1
 # JJ
-# IF YOU MANAGED TO FIND THIS FILE ON GitHub BEFORE THE DEADLIEN OF THIS 
+# IF YOU MANAGED TO FIND THIS FILE ON GitHub BEFORE THE DEADLINE OF THIS 
 # HOMEWORK, YOU ARE A CLEVER PERSON AND DESERVES A FULL GRADE.
 
 # Question 1 ----
@@ -42,8 +42,7 @@ fruits <- c("Apple", "Banana", "Cherry", "Date", "Elderberry")
 
 # Determining the character length in each fruit name using the nchar() function
 nchar(fruits)
-
-# Elderberry has the most characters
+# Based on the results, we can see that Elderberry has the most characters
 
 # Question 3 ----
 # Dates
@@ -86,4 +85,4 @@ sales <- c(1200, 1300, 1250, 1100, 1150, 1400, 1450, 1300, 1350, 1100, 1250,
 mean_sales <- mean(sales)
 
 # Finding the months were sales above the yearly average using the > operator
-above_mean <- (sales > mean_sales) * c(1:12)
+above_mean <- (sales > mean_sales) * 1:12
