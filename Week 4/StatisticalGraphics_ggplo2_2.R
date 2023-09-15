@@ -21,6 +21,16 @@
 # Use the library() function
 
 
+#TODO
+# You need to install another package beside ggplot2
+# the ggthemes package
+# use the install.packages() function to install "ggthemes"
+
+
+#TODO
+# Load the ggthemes package using the library() function
+
+
 # This time, we are going to work with the Penguins dataset
 # The Penguins dataset is a dataset about penguins
 # It is a dataset that is included in the palmerpenguins package
