@@ -45,7 +45,6 @@
 # The second argument of sprintf() should be the name argument
 # The third argument of sprintf() should be the age argument
 
-sprintf("Hello %s! You are %d years old!", "Jasser", 20)
 
 #TODO
 # Create a function called hello_name that takes a name argument
