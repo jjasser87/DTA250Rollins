@@ -169,7 +169,7 @@
 # Inside aes(), set the shape parameter to species
 # Add a + sign after the geom_point() function
 # After that use the facet_wrap() function
-# Inside the facet_wrap() function, set the formula parameter to
+# Inside the facet_wrap() function, set the formula to
 # ~ island
 
 
