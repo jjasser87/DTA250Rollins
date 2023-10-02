@@ -72,8 +72,8 @@ theList <- list(A=matrix(1:9, 3), B=1:5, C=matrix(1:4, 2), D=2)
 
 
 # Will, that didn't work. Why?
-# Because the class() function returns a character vector of length 1.
-# map_chr() expects a character vector of length > 1.
+# Because the class() function returns a character vector of length > 1.
+# map_chr() expects a character vector of length 1.
 # We can use the map() function instead.
 
 
