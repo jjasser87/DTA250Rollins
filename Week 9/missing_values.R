@@ -7,7 +7,7 @@
 
 #TODO
 # load the tidyverse package using the library() function
-library(tidyverse)
+
 
 ## Explicit missing values ----
 # Explicit missing values are values that are explicitly marked as missing.
@@ -34,7 +34,7 @@ treatment <- tribble(
 # the fill() function will fill the missing values with the last non-missing 
 # value
 # the everything() function will select all columns
-treatment |> fill(everything())
+
 
 
 ### Fixed values ----
@@ -44,14 +44,14 @@ treatment |> fill(everything())
 x <- c(1, 4, 5, 7, NA)
 # Notice that the last element in the vector x is NA
 # Use the function coalesce() to fill replace the NA element with 0
-coalesce(x, 0)
+
 
 #TODO
 # Run the following code
 x <- c(1, 4, 5, 7, NA, 9, NA)
 # Now there are two NAs at the end
 # Try again with the coalesce() function and replace NA with 0
-coalesce(x, 0)
+
 
 ### Convert values to NA
 # Run the follwing code
@@ -59,7 +59,7 @@ x <- c(1, 4, 5, 7, -99)
 # Obviously the -99 is an odd number in there. Sometimes, it is better to remove
 # these odd numbers and replace them with NA.
 # use the na_if() function to replace the number -99 with NA
-na_if(x, -99)
+
 
 ### NaN ----
 # Not a number.
@@ -92,11 +92,7 @@ stocks <- tibble(
 # Use the pivot_wider() function to convert the implicit missing values into
 # explicit ones
 # follow after me with the code
-stocks |>
-  pivot_wider(
-    names_from = qtr,
-    values_from = price
-  )
+
 
 ###Complete ----
 # Another approach is to use the function complete()
@@ -104,12 +100,12 @@ stocks |>
 #TODO
 # Use the function complete() to o generate explicit missing values by providing
 # a set of variables that define the combination of rows that should exist.
-stocks |> complete(year, qtr)
+
 
 #TODO
 # Repeat the last TODO
 # This time, set the year parameter to be 2019:2021.
-stocks |> complete(year = 2019:2020, qtr)
+
 
 
 ### Joins ----
@@ -131,18 +127,18 @@ health <- tibble(
 
 # Count the number of smokers using the count() function
 # the count() function will count the number of observations in each group
-health |> count(smoker)
+
 
 #TODO
 # Repeat the last TODO
 # This time, inside the count() function, add the argument .drop = FALSE
 # This will tell R to include the empty groups
-health |> count(smoker, .drop = FALSE)
+
 
 #TODO
 # Let us explain this using ggplot
 # Load the ggplot2 package using the library() function
-library(ggplot2)
+
 
 #TODO
 # Run the following code
@@ -156,9 +152,7 @@ ggplot(data = health, aes(x = smoker)) +
 # the scale_x_discrete() function will tell R to use discrete values 
 # on the x-axis
 # Inside scale_x_discrete set the drop parameter to FALSE
-ggplot(data = health, aes(x = smoker)) +
-  geom_bar() +
-  scale_x_discrete(drop = FALSE)
+
 
 #TODO
 # gropu_by smoker
@@ -169,24 +163,4 @@ ggplot(data = health, aes(x = smoker)) +
 # the max age of patients
 # the min age of patients
 # the age standard deviation of patients. use the sd() function for that.
-health |>
-  group_by(smoker, .drop = FALSE) |>
-  summarize(
-    n = n(),
-    avg_age = mean(age),
-    max_age = max(age),
-    min_age = min(age),
-    sd_age = sd(age)
-  )
 
-# or a better approach
-health |>
-  group_by(smoker) |>
-  summarize(
-    n = n(),
-    avg_age = mean(age),
-    max_age = max(age),
-    min_age = min(age),
-    sd_age = sd(age)
-  ) |>
-  complete(smoker)
