@@ -146,3 +146,15 @@ flights |>
 # Call your new column id
 flights <- flights |>
   mutate(id = row_number())
+
+#TODO
+# Verify that the new "id" columns is a primary key.
+
+flights |>
+  count(id) |>
+  filter(n > 1)
+
+# A sneak peak at joins.
+
+flights <- flights |>
+  left_join(airlines, join_by(carrier))
