@@ -45,7 +45,7 @@
 # the weather dataset.
 # Use the select() function to create the subset from the weather dataset.
 
-              )
+
 
 #TODO
 # Do a left_join() of flights2 and planes.
@@ -53,7 +53,6 @@
 # planes dataset.
 # Use the select() function to create the subset from the planes dataset.
 
-              )
 
 ## Specifying keys ----
 # By default, the left_join() function uses all the columns that are common
@@ -64,7 +63,7 @@
 #TODO
 # Do a left_join() of flights2 and planes.
 # use the join_by() function to specify tailnum as the key to use for the join.
-)
+
 
 # Notice the year.y column in the output.
 # This column contains the year from the planes dataset.
@@ -108,4 +107,5 @@
 # Do a anti_join() between flights2 and airports.
 # use the join_by() function and join the two datasets through dest and faa
 # use the distinct() function to remove duplicate dest rows
+# distinct() is a function that removes duplicate rows from a data frame.
 
