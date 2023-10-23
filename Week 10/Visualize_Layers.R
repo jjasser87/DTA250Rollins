@@ -116,7 +116,8 @@
 ## Statistical transformations ----
 
 # Consider the following plot:
-
+ggplot(data = diamonds, aes(x=cut)) +
+    geom_bar()
 # How is the plot created?
 # Check Figure 10.2 from the book
 # https://r4ds.hadley.nz/layers#fig-vis-stat-bar 
