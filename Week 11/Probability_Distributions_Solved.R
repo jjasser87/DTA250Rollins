@@ -129,11 +129,9 @@ poisDF <- data.frame(
 #TODO
 # We need to do some reshaping for the data to be in the correct format for
 # plotting.
-# Load the tidyr library
-# Use the melt() function to reshape the data
 # Run the following code.
 
-library(tidyr)
+library(tidyverse)
 poisDF <- poisDF |>
     pivot_longer(
         cols=everything(),
@@ -146,6 +144,11 @@ poisDF <- poisDF |>
     as.numeric() |> 
     as.factor()
     )
+
+# In the above code we used the pivot_longer() function to reshape the data
+# and the mutate() function to convert the Lambda column to a factor.
+# The str_extract() function is used to extract the numbers from the Lambda
+# column.
 
 #TODO
 # Create a histogram using the ggplot() and geom_histogram() functions
@@ -164,3 +167,5 @@ ggplot(data=poisDF, aes(x=Count)) +
     adjust = 4) +
     scale_color_discrete() +
     scale_fill_discrete()
+
+# adjust = 4 is used to make the density curves wider

@@ -121,16 +121,32 @@ ggplot(data = binomDF, aes(x = Successes)) +
 # n=10000 and lambda=1.
 # Save the results in a variable called pois1
 
+pois1 <- rpois(n=10000, lambda=1)
+
 
 #TODO
 # Repeat the last TODO 4 more times but this time change lambda to 2, 5, 10, and 20
 # Save the results in variables called pois2, pois5, pois10, and pois20
+
+pois2 <- rpois(n=10000, lambda=2)
+pois5 <- rpois(n=10000, lambda=5)
+pois10 <- rpois(n=10000, lambda=10)
+pois20 <- rpois(n=10000, lambda=20)
+
 
 
 #TODO
 # Create a data.frame called poisDF with 5 columns: Lambda.1, Lambda.2, Lambda.5,
 # Lambda.10, and Lambda.20
 # Set each column to the corresponding variable from the last TODO
+
+poisDF <- data.frame(
+  Lambda.1 = pois1,
+  Lambda.2 = pois2,
+  Lambda.5 = pois5,
+  Lambda.10 = pois10,
+  Lambda.20 = pois20
+)
 
 
 #TODO
@@ -139,6 +155,8 @@ ggplot(data = binomDF, aes(x = Successes)) +
 # Load the tidyr library
 # Use the melt() function to reshape the data
 # Run the following code.
+
+library(tidyverse)
 
 library(tidyr)
 poisDF <- poisDF |>
@@ -160,7 +178,18 @@ poisDF <- poisDF |>
 # lambda values
 
 
+ggplot(data = poisDF, aes(x=Count)) +
+  geom_histogram() +
+  facet_wrap(~Lambda)
+
 
 #TODO
 # Create a density plot using the ggplot() and geom_density() functions
+
+ggplot(data = poisDF, aes(x=Count)) +
+  geom_density(
+    aes(group = Lambda, color = Lambda, fill = Lambda),
+    adjust = 4,
+    alpha = 0.5
+  )
 

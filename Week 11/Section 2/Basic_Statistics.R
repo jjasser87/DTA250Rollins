@@ -12,9 +12,13 @@
 # x. Set the size parameter to 100 and the replace parameter to TRUE
 # replace=TRUE means that the values can be sampled more than once
 
+x <- sample(1:100, size=100, replace=TRUE)
+
 
 #TODO
 # Find the mean of x
+
+mean(x)
 
 
 #TODO
@@ -23,12 +27,16 @@
 y <- x
 y[sample(1:100, size=20, replace=FALSE)] <- NA
 
+
 #TODO
 # Find the mean of y
+mean(y)
 
 
 #TODO
 # Find the mean of y using the na.rm argument
+
+mean(y, na.rm=TRUE)
 
 
 # We can replace the NA values in y with the mean of y using the is.na()
@@ -38,9 +46,13 @@ y[sample(1:100, size=20, replace=FALSE)] <- NA
 #TODO
 # Replace the NA values in y with the mean of y
 
+y[is.na(y)] <- mean(y, na.rm=TRUE)
+
 
 #TODO
 # Find the mean of y again
+
+mean(y)
 
 
 ## Weighted Mean ----
@@ -53,6 +65,8 @@ weights <- c(1/2, 1/4, 1/8, 1/8)
 # Find the weighted mean of grades
 # use the weighted.mean() function
 
+weighted.mean(grades, weights)
+
 
 # Variance is a measure of how spread out a set of data is. The variance of a
 # vector can be calculated using the var() function.
@@ -62,15 +76,18 @@ weights <- c(1/2, 1/4, 1/8, 1/8)
 # Which equals to
 sum((x - mean(x))^2) / (length(x) - 1)
 
-
+var(x)
 
 #TODO
 # Find the summary statistics of x using the summary() function
+
+summary(x)
 
 
 #TODO
 # Find the summary statistics of y using the summary() function
 
+summary(y)
 
 # Correlation ----
 # The cor() function can be used to calculate the correlation between two
