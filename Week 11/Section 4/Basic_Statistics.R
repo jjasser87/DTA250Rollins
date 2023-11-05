@@ -91,36 +91,86 @@ summary(y)
 
 #TODO
 # Load the tidyverse package using the library() function
-
+library(tidyverse)
 
 #TODO
 # Load the economics dataset from the ggplot2 package using the data() function
-
+data(economics)
 
 #TODO
 # Take a look at the very first few rows of the economics dataset using the
 # head() function
-
+head(economics)
 
 #TODO
 # Find the correlation between the pce and psavert variables in the economics
 # dataset. Use the cor() function
 
+cor(economics$pce, economics$psavert)
 
 #TODO
 # Find the correlation between pce, psavert, uempmed, and unemploy variables in
 # the economics dataset. Use the cor() function
 
+cor(economics[ , c("pce", "psavert", "uempmed", "unemploy")])
+
 
 #TODO
 # Install the GGally package using the install.packages() function
+
+install.packages("GGally")
 
 
 #TODO
 # Load the GGally package using the library() function
 
+library(GGally)
+
 
 #TODO
 # Use the ggpairs() function to visualize the correlation between pce, psavert,
 # uempmed, and unemploy variables in the economics dataset
+
+ggpairs(economics[ , c("pce", "psavert", "uempmed", "unemploy")])
+
+
+#TODO
+# Create the ggpairs for the following columns from the penguins dataset
+# "bill_length_mm"    "bill_depth_mm" "flipper_length_mm" "body_mass_g"
+
+library(palmerpenguins)
+data(penguins)
+ggpairs(penguins[ , c("bill_length_mm", 
+                      "bill_depth_mm", 
+                      "flipper_length_mm",
+                      "body_mass_g")])
+
+# T-Test
+
+# JJ has a chicken shack called JJ fill-a
+# The average customer spends 50 dollar
+# JJ decided to start a marketing campaign
+# One day after the campaign
+# In the first day after the campaign 30 customers came to the shack
+# The average customer spends 60 dollar
+
+new_sales <- sample(10:100, size=30, replace = TRUE)
+mean(new_sales)
+
+# H0: the true average is 50
+# H1: the true average is greater than 50
+
+t.test(new_sales, alternative = "greater", mu=50)
+new_sales_ttest <- t.test(new_sales, alternative = "greater", mu=50)
+
+randT <- rt(n=30000, df=29)
+randTDF <- data.frame(x=randT)
+
+ggplot(data = randTDF) +
+  geom_density(aes(x=x), fill="grey", color="grey") +
+  geom_vline(xintercept = new_sales_ttest$statistic) +
+  geom_vline(xintercept = 1.69, linetype=2)
+
+
+
 

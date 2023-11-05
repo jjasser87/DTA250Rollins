@@ -95,36 +95,87 @@ summary(y)
 
 #TODO
 # Load the tidyverse package using the library() function
+library(tidyverse)
 
 
 #TODO
 # Load the economics dataset from the ggplot2 package using the data() function
-
+data(economics)
 
 #TODO
 # Take a look at the very first few rows of the economics dataset using the
 # head() function
-
+head(economics)
 
 #TODO
 # Find the correlation between the pce and psavert variables in the economics
 # dataset. Use the cor() function
+
+cor(economics$pce, economics$psavert)
 
 
 #TODO
 # Find the correlation between pce, psavert, uempmed, and unemploy variables in
 # the economics dataset. Use the cor() function
 
+cor(economics[ , c("pce", "psavert", "uempmed", "unemploy")])
+
 
 #TODO
 # Install the GGally package using the install.packages() function
 
+install.packages("GGally")
+
 
 #TODO
 # Load the GGally package using the library() function
+library(GGally)
 
 
 #TODO
 # Use the ggpairs() function to visualize the correlation between pce, psavert,
 # uempmed, and unemploy variables in the economics dataset
 
+ggpairs(economics[ , c("pce", "psavert", "uempmed", "unemploy")])
+
+#TODO
+# Create the ggpairs for the following columns from the penguins dataset
+# "bill_length_mm"    "bill_depth_mm" "flipper_length_mm" "body_mass_g"
+
+library(palmerpenguins)
+data("penguins")
+ggpairs(penguins[ , c("bill_length_mm", 
+                      "bill_depth_mm", 
+                      "flipper_length_mm", 
+                      "body_mass_g")]
+        )
+
+
+# T-Test
+
+# Let's just say that I have a chicken shack called JJ Chicken
+# My average customer pays 50 dollar
+# I did a marketing campaign to increase sale average
+# Next day, I had 30 customers where the average customer payed 70 dollars
+
+# Lowest customer pay was 30
+# Hightest customer pay was 100
+
+new_sales <- sample(10:100, size=30, replace=TRUE)
+mean(new_sales)
+
+t.test(new_sales, alternative = "greater", mu=50)
+
+new_sales_ttest <- t.test(new_sales, alternative = "greater", mu=50)
+
+# H0: The true average is equal to 50
+# H1: The true average is greater than 50
+
+randT <- rt(30000, df=29)
+
+randTDF <- data.frame(x=randT)
+
+ggplot(data = randTDF) +
+  geom_density(aes(x=x), fill="grey", color="grey") +
+  geom_vline(xintercept = new_sales_ttest$statistic) +
+  geom_vline(xintercept = mean(randT) + 1.69, linetype=2)

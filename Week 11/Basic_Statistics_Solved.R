@@ -111,3 +111,88 @@ library(GGally)
 # Use the ggpairs() function to visualize the correlation between pce, psavert,
 # uempmed, and unemploy variables in the economics dataset
 ggpairs(economics[, c("pce", "psavert", "uempmed", "unemploy")])
+
+# T-Test One Sample ----
+# The t.test() function can be used to perform a t-test on a single sample.
+# The t.test() function takes a vector as an argument and returns a list of
+# results.
+
+# To explain the t-test, we will use the following example. Assume that JJ
+# is the owner of a chicken shack called JJ Fill-a-Bucket. JJ claims that the
+# average transaction per customer is $50. JJ started a marketing campaign to
+# increase the average transaction per customer. After the marketing campaign,
+# JJ wants to know if the average transaction per customer has increased. JJ
+# randomly sampled 100 transactions and found that the average transaction per
+# customer is $55. JJ wants to know if the average transaction per customer has
+# increased.
+
+new_sales <- sample(20:90, size=100, replace=TRUE)
+# 20 is the mimimum transaction amount
+# 90 is the maximum transaction amount
+# 100 is the number of transactions
+# replace=TRUE means that there is a probability that 2 customers payed the 
+# same amount
+
+new_sales_test <- t.test(new_sales, mu=50, alternative="greater")
+# This will produce a list of results
+# mu=50 means that the null hypothesis is that the average transaction per
+# customer is $50
+# alternative="greater" means that the alternative hypothesis is that the
+# average transaction per customer is greater than $50
+
+# The results will look like this: (depending on the random sample)
+#> new_sales_test
+
+#        One Sample t-test
+
+# data:  new_sales
+# t = 3.0351, df = 99, p-value = 0.001536
+# alternative hypothesis: true mean is greater than 50
+# 95 percent confidence interval:
+# 52.82174      Inf
+# sample estimates:
+# mean of x 
+    56.23 
+
+# In the case above, the p-value is 0.001536. This means that there is a 0.1536%
+# chance that the average transaction per customer is greater than $50. Since
+# the p-value is less than 0.05, we can reject the null hypothesis and conclude
+# that the average transaction per customer is greater than $50.
+# Which means that the marketing campaign was successful.
+
+# Let us visualize this using a histogram
+
+randT <- rt(30000, df=99)
+# rt() function will generate a random sample of t-distribution
+# df=99 means that the degrees of freedom is 99 (100 - 1). Number of samples - 1
+
+# From the t distribution table for one-tailed test, we can see that the
+# critical value for 99 degrees of freedom and 0.05 significance level is 1.66
+# https://www.tdistributiontable.com/
+
+# Create a data.frame from the randT vector
+randTDF <- data.frame(x = randT)
+
+# Create a ggplot object
+library(ggplot2)
+
+# Density plot with critical value and t-statistic value as vlines
+ggplot(randTDF, aes(x=x)) +
+    geom_density(fill="blue", alpha=0.2) +
+    geom_vline(
+        xintercept=c(1.66, new_sales_test$statistic), 
+        linetype="dashed", color=c("red", "green")
+        ) +
+    labs(
+        title="Density Plot with Critical Value and T-Statistic Value as Vlines",
+             x="T-Statistic",
+             y="Density"
+             )
+
+# In the above plot, the red line is the critical value and the green line is
+# the t-statistic value. 
+# If The t-statistic value is greater than the critical
+# value. This means that we can reject the null hypothesis and conclude that
+# the average transaction per customer is greater than $50.
+# else, we cannot reject the null hypothesis and conclude that the average
+# transaction per customer is not greater than $50.
