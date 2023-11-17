@@ -87,6 +87,15 @@ tips |> filter(sex == "Female") |> pull(tip) |> shapiro.test()
 # Since the distributions are not normal, we will use the non-parametric
 # Ansari-Bradley test.
 ansari.test(tip ~ sex, data=tips)
+
+# The p-value is greater than 0.05, so we accept the null hypothesis and reject
+# the alternative hypothesis.
+# Both samples have the same variance.
+
+# Now we can run the two-sample t-test.
+t.test(tips |> filter(sex == "Male") |> pull(tip),
+       tips |> filter(sex == "Female") |> pull(tip))
+
 # The p-value is greater than 0.05, so we accept the null hypothesis and reject
 # the alternative hypothesis. There is no significant difference between the
 # tip amount from Males to Females.
