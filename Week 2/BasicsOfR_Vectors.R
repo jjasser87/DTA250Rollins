@@ -200,4 +200,4 @@ c(q, "Hockey", "Lacrosse", "Hockey", "Water Polo", "Hockey", "Lacrosse")
 
 #TODO
 # Use the below vector and follow my instructions
-c("High School", "College", "Masters", "Doctorate")
+c("College", "PhD", "High School", "Masters")
