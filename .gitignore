@@ -50,13 +50,11 @@ Week 4/test/StatisticalGraphics_ggplo2_2.R
 penguins-plot.png
 penguins-plot.png
 Week 4/Homework 3/Homework3_solved.R
-Week 5/WritingRFunctions_solved.R
 Week 5/Section 1/WritingRFunctions.R
 Week 5/Section 2/WritingRFunctions.R
 Week 5/Section 3/WritingRFunctions.R
 Week 5/Section 4/WritingRFunctions.R
 Week 3/Homework 2/Homework2_solution.R
-Week 5/ControlStatements_solved.R
 Week 5/Section 1/ControlStatements.R
 Week 5/Section 2/ControlStatements.R
 Week 5/Section 3/ControlStatements.R
@@ -65,7 +63,6 @@ Week 5/Section 2/Loops.R
 Week 5/Section 3/Loops.R
 Week 5/Section 4/Loops.R
 Week 5/Section 4/ControlStatements.R
-Week 5/Loops_solved.R
 Week 5/Homework 4/hw4_ideas.R
 Week 6/data.table_solved.R
 Week 6/GroupManipulation.R
@@ -79,7 +76,6 @@ Midterm/Evil.R
 Midterm/Bonus.R
 Midterm/Evil_idea.R
 Midterm/midterm_solved.R
-Week 6/dplyr_solved.R
 Week 6/Section 1/Apply.R
 Week 6/Section 1/dplyr.R
 Week 6/Section 2/Apply.R

@@ -62,7 +62,7 @@ c("Hockey", "Football", "Baseball", "Curling", "Rugby", "Lacrosse",
 
 #TODO
 # Change the row names in df to the following using rownames() function
-c("a", "b", "c", "d", "e", "f", "g", "h", "i", "jj")
+c("a", "b", "c", "d", "e", "f", "g", "h", "i", "j")
 # Notice the c() function
 
 

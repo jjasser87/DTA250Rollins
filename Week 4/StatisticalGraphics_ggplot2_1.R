@@ -110,13 +110,13 @@
 # Repeat the previous TODO
 # Add a + sign after the geom_point() function
 # After that use the facet_wrap() function
-# Inside the facet_wrap() function, set the formula parameter to ~ color
+# Inside the facet_wrap() function, set the separator ~ color
 
 
 #TODO
 # This time, we will replace the facet_wrap() function with the facet_grid()
 # function
-# Inside the facet_grid() function, set the formula parameter to cut ~ clarity
+# Inside the facet_grid() function, set the separator cut ~ clarity
 
 
 # Faceting can also works with histograms or any other geom.
@@ -131,7 +131,7 @@
 # After that use the geom_histogram() function
 # Add a + sign after the geom_histogram() function
 # After that use the facet_wrap() function
-# Inside the facet_wrap() function, set the formula parameter to ~ color
+# Inside the facet_wrap() function, use the separator ~ color
 
 
 ## Boxplot and Violins ----
