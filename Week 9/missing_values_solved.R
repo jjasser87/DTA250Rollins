@@ -72,6 +72,24 @@ x |> na_if(-99)
 # and if you want to replace NAs with 0
 x |> na_if(-99) |> coalesce(0)
 
+# The reason we convert negative values to NAs because imagine if you have too many of them
+# as in this example
+x <- c(1, 2, -50, 4, 5, -99, 7, 8, -100, 10)
+
+# Obviously there is a pattern here. The negative values are the odd ones.
+# In this case, we convert the negative values to NAs then we fill the NAs with
+# right numbers that fits the pattern
+
+x <- ifelse(x < 0, NA,  x)
+
+# Fill the NAs with the right numbers
+# This is a bit advanced. We will use a for loop to do so
+for (i in 1:length(x)) {
+  if (is.na(x[i])) {
+    x[i] <- x[i-1] + 1
+  }
+}
+
 ### NaN ----
 # Not a number.
 # Check the note "NA vs NaN" on CANVAS.
@@ -80,9 +98,9 @@ x |> na_if(-99) |> coalesce(0)
 # Perform the following operations
 # Divide 0 by 0
 0/0
-# Multiply 0 with inf
+# Multiply 0 with Inf
 0 * Inf
-# Subtract inf from inf
+# Subtract Inf from Inf
 Inf - Inf
 # Find the sqrt() of -1
 sqrt(-1)

@@ -68,8 +68,8 @@ x <- c(1, 4, 5, 7, -99)
 #TODO
 # Perform the following operations
 # Divide 0 by 0
-# Multiply 0 with inf
-# Subtract inf from inf
+# Multiply 0 with Inf
+# Subtract Inf from Inf
 # Find the sqrt() of -1
 
 

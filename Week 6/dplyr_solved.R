@@ -10,6 +10,7 @@
 # Load the library dplyr using the library() function
 
 library(dplyr)
+library(tidyverse)
 
 #TODO
 # Use the diamonds dataset to create a new data frame called df
@@ -37,6 +38,7 @@ select(df, carat, cut, color, clarity)
 # Redo the last TODO using the select() function and the pipe operator %>%
 
 df %>% select(carat, cut, color, clarity)
+df |> select(carat, cut, color, clarity)
 
 
 #TODO
@@ -86,6 +88,8 @@ df %>% filter(price > 1000)
 
 df %>% filter(carat > 2, price > 1000)
 
+df |> filter(carat > 2 & price > 1000)
+
 
 ## slice() ----
 # slice() is used to select rows by position
@@ -94,6 +98,8 @@ df %>% filter(carat > 2, price > 1000)
 # Use the slice() function to select the rows 5, 6, and 7
 
 df %>% slice(5:7)
+
+df[5:7, ]
 
 ## mutate() ----
 # mutate() is used to create new columns
@@ -112,6 +118,8 @@ df %>% mutate(Ratio = price / carat)
 
 df %>% mutate(Ratio = price / carat, Double = Ratio * 2)
 
+df |> mutate(Double = Ratio * 2, Ratio = price / carat)
+
 
 # But still, all these new columns are not saved in the data frame. To save
 # them, we need to use the %<>% operator from the magrittr package
@@ -120,6 +128,8 @@ df %>% mutate(Ratio = price / carat, Double = Ratio * 2)
 # Redo the last TODO using the %<>% operator.
 
 df %<>% mutate(Ratio = price / carat, Double = Ratio * 2)
+
+df <- df |> mutate(Ratio = price / carat, Double = Ratio * 2)
 
 
 ## summarize() ----
@@ -134,7 +144,7 @@ df %>% summarize(mean(price))
 # Use the summarize() function to get the mean price of the diamonds, and the
 # mean carat of the diamonds
 
-df %>% summarize(mean(price), mean(carat))
+df %>% summarize(avg_price = mean(price), avg_carat = mean(carat))
 
 
 ## group_by() ----
@@ -146,12 +156,21 @@ df %>% summarize(mean(price), mean(carat))
 
 df %>% group_by(cut) %>% summarize(mean(price))
 
+df |> group_by(cut) |>
+    summarize(mean(price))
+
 
 #TODO
 # Use the group_by() function to group the data by the cut and color columns
 # and then summarize the data to get the mean price of each cut and color
 
 df %>% group_by(cut, color) %>% summarize(mean(price))
+
+df |> group_by(cut, color) |>
+  summarize(mean(price))
+
+df2 <- df |> group_by(cut, color) |>
+  summarize(mean(price))
 
 
 ## arrange() ----
@@ -162,6 +181,8 @@ df %>% group_by(cut, color) %>% summarize(mean(price))
 
 df %>% arrange(price)
 
+df |> arrange(desc(price))
+
 
 #TODO
 # Use the summarize() function to get the mean price of the diamonds, and the
@@ -170,5 +191,5 @@ df %>% arrange(price)
 
 df %>% 
     group_by(cut) %>% 
-    summarize(mean(price), mean(carat)) %>% 
-    arrange("mean(price)")
+    summarize(avg_price = mean(price), avg_carat = mean(carat)) %>% 
+    arrange(avg_price)
