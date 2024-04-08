@@ -14,7 +14,7 @@
 
 # Question 2 ----
 # Write a function called even_or_odd that takes a number as an argument
-# and will print "<number> is even" is the number is even. else, it will print
+# and will print "<number> is even" is the number is even. else, it wil print
 # "<number> is odd"
 
 
