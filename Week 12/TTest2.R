@@ -3,11 +3,25 @@
 
 # T-Test for a paired two sample
 
+library(tidyverse)
+
 # Load the UsingR library
 library(UsingR)
 
+install.packages("UsingR")
+
 # Load the father.son dataset
 data(father.son)
+
+plot(father.son$fheight, father.son$sheight)
+
+# Create a data frame of the t-distribution
+t.df <- data.frame(x = seq(-4, 4, 0.01),
+                   y = dt(seq(-4, 4, 0.01), df=10))
+
+# Create a plot of the t-distribution
+plot(t.df$x, t.df$y, type="l", col="blue", xlab="t", ylab="Density",
+     main="T-Distribution")
 
 # T-Test between fathers' height and sons' height
 t.test(father.son$fheight, father.son$sheight, paired=TRUE)

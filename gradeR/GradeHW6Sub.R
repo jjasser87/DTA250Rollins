@@ -6,7 +6,7 @@ rm(list = ls())
 
 setwd("C:/Users/jjasser/OneDrive - Rollins College/DTA250/code/DTA250Rollins/gradeR")
 
-submissionDir <- "HW6Subs/"
+submissionDir <- "SubT/"
 
 grades <- calcGrades(submission_dir = submissionDir,
                      your_test_file = "TestHomework6_V2.R", verbose = TRUE)

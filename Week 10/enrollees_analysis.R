@@ -6,6 +6,9 @@ library(readxl)
 # load tidyverse
 library(tidyverse)
 
+# Load the maps package
+library(maps)
+
 # Load map data for Florida counties
 fl_counties <- map_data("county", "florida") |>
     select(lon = long, lat, group, county = subregion)
