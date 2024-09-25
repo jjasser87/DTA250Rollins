@@ -41,10 +41,10 @@ library(ggthemes)
 # This time, we are going to work with the Penguins dataset
 # The Penguins dataset is a dataset about penguins
 # It is a dataset that is included in the palmerpenguins package
-# The palmerpenguins package is a package that is included in the tidyverse
-# Therefore, we don't need to install it
+
 
 #TODO
+# Install the palmerpenguins package
 # Load the palmerpenguins package
 # Use the library() function
 # set the package name to "palmerpenguins"
