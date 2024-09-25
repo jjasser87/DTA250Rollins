@@ -56,17 +56,29 @@ points_plot + price_plot
 # Finding the correlation between points and price for the states of
 # California, Oregon and Washington
 
-ggplot(data = USdf |>
+p <- ggplot(data = USdf |>
          filter(state %in% c("california", "oregon", "washington") & 
                   price < 200), 
        aes(x=price, y=points)) +
-  geom_point(aes(color = state)) +
+  geom_point(
+    color="black",
+    fill="#69b3a2",
+    shape=22,
+    alpha=0.5,
+    size=0.5,
+    stroke = 1
+  ) +
+  theme_ipsum() +
   geom_smooth(method = "lm") +
   scale_x_log10() +
   labs(x = "Price", 
        y="Points", 
        color="State", 
        title="Correlating Price and Points")
+
+
+# with marginal histogram
+p1 <- ggMarginal(p, type="histogram")
 
 # Plotting the distribution of points and price for the states of
 # California, Oregon and Washington
