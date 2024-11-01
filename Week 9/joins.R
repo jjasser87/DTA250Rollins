@@ -30,6 +30,22 @@
 
 
 #TODO
+# Load the airlines dataset using the data() function
+
+
+#TODO
+# Load the weather dataset using the data() function
+
+
+#TODO
+# Load the planes dataset using the data() function
+
+
+#TODO
+# Load the airports dataset using the data() function
+
+
+#TODO
 # Create a subset of flights called flights2 that contains the following columns:
 # year, time_hour, origin, dest, tailnum, and carrier.
 # use the select() function to create the subset
