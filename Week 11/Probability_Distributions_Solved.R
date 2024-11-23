@@ -5,6 +5,9 @@
 # Perhaps the most famous, and most used, distribution is the normal 
 # distribution.
 
+# Set the seed to 123 to ensure reproducibility
+set.seed(123)
+
 #TODO
 # Create 10 random numbers using the rnorm() function
 rnorm(n=10)
