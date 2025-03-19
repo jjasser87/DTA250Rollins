@@ -87,8 +87,7 @@
 # not unique in the planes dataset.
 
 # To rename the year.y column, we can use the rename() function.
-#TODO
-# Follow after me with the code
+
 
 
 # join_by(tailnum) is equal to join_by(tailnum == tailnum)
