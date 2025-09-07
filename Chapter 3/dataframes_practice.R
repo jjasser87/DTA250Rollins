@@ -29,20 +29,7 @@
 
 
 # ============================
-# 3. Modifying Data Frames
-# ============================
-
-# 3a. Add a new column called "GPA" with numeric values.
-
-# 3b. Change the Major of the second student.
-
-# 3c. Add a new row with a new student's information.
-
-# 3d. Remove the GPA column from the data frame.
-
-
-# ============================
-# 4. Useful Functions
+# 3. Useful Functions
 # ============================
 
 # 4a. Use head() to view the first rows of the built-in mtcars dataset.
@@ -52,5 +39,3 @@
 # 4c. Use summary() on the mtcars dataset.
 
 # 4d. Use str() on the mtcars dataset.
-
-# 4e. Access only the mpg and hp columns of the mtcars dataset.
