@@ -32,10 +32,10 @@
 # 3. Useful Functions
 # ============================
 
-# 4a. Use head() to view the first rows of the built-in mtcars dataset.
+# 4a. Use head() to view the first rows of the dataset.
 
-# 4b. Use tail() to view the last rows of the mtcars dataset.
+# 4b. Use tail() to view the last rows of dataset.
 
-# 4c. Use summary() on the mtcars dataset.
+# 4c. Use summary() on dataset.
 
-# 4d. Use str() on the mtcars dataset.
+# 4d. Use str() on dataset.
