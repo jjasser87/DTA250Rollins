@@ -1,0 +1,3 @@
+submission_name,book_title_clean,title_character_count,title_prefix,title_label,title_upper,sample_review_length,sample_review_first_word,sample_review_snake,sample_review_lower,positive_pattern,negative_pattern,reviews_clean,sentiment_summary,rating_by_sentiment,sentiment_plot,current_date,current_time,reviews_time,monthly_review_counts,monthly_average_rating,weekday_average_rating,monthly_review_plot,monthly_rating_plot,weekday_rating_plot,total_points
+mock_submission_2.R,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,24
+mock_submission.R,1,0,1,0,1,1,0,1,1,1,0,0,1,0,0,1,0,0,0,0,1,0,0,0,10
