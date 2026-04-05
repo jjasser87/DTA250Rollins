@@ -4,26 +4,16 @@
 # those names to exist after the file is sourced.
 
 library(tidyverse)
-library(lubridate)
-
 
 # -------------------------------------------------------------------------
 # Data
 # -------------------------------------------------------------------------
 
-# Chapter 11 data: load directly from GitHub and standardize the column names.
-# If GitHub is temporarily unavailable, fall back to the local copy.
-reviews <- tryCatch(
-  suppressWarnings(
-    readr::read_csv(
+# Data: load directly from GitHub and standardize the column names.
+reviews <- read_csv(
       "https://raw.githubusercontent.com/jjasser87/DTA250Rollins/refs/heads/main/Homework/Chapters%2011%20and%2012/customer%20reviews.csv",
       show_col_types = FALSE
-    )
-  ),
-  error = function(e) {
-    readr::read_csv("Homework/Chapters 11 and 12/customer reviews.csv", show_col_types = FALSE)
-  }
-) |>
+    ) |>
   rename_with(~ str_replace_all(.x, " ", "_"))
 
 
