@@ -16,6 +16,7 @@ The autograder:
    - `status`
    - `points_earned`
    - `points_possible`
+   - `point_loss_reason`
 6. Adds a final total row.
 7. Saves the results as CSV reports.
 8. Creates batch summary files when you grade multiple submissions or a folder.
@@ -96,6 +97,16 @@ Each row in the grading report includes:
 1. `output_check`
 2. `function_check`
 3. `status`
+4. `point_loss_reason`
+
+If a student loses the point on a row, `point_loss_reason` explains why.
+
+Examples:
+
+1. `Final output did not match the expected result.`
+2. `Missing required function(s): case_when.`
+3. `Used forbidden substitute function(s): word.`
+4. A combined message if both the output and function usage were wrong.
 
 Possible status values include:
 

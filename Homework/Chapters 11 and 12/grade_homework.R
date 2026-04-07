@@ -529,14 +529,65 @@ run_comparison <- function(observed, expected, comparator) {
 reference <- build_reference(script_dir)
 check_function_usage <- function(object_name, required_functions, forbidden_functions, assignment_calls) {
   used_functions <- assignment_calls[[object_name]] %||% character()
+  missing_required <- setdiff(required_functions, used_functions)
+  used_forbidden <- intersect(forbidden_functions, used_functions)
 
-  required_ok <- all(required_functions %in% used_functions)
-  forbidden_ok <- !any(forbidden_functions %in% used_functions)
+  required_ok <- length(missing_required) == 0
+  forbidden_ok <- length(used_forbidden) == 0
 
   list(
     used_functions = paste(sort(used_functions), collapse = ", "),
-    function_check = required_ok && forbidden_ok
+    function_check = required_ok && forbidden_ok,
+    missing_required = missing_required,
+    used_forbidden = used_forbidden
   )
+}
+
+
+build_point_loss_reason <- function(status, function_result = NULL, source_error = NULL) {
+  if (status == "correct") {
+    return("")
+  }
+
+  if (status == "error") {
+    return(source_error %||% "Submission could not be sourced.")
+  }
+
+  if (status == "missing") {
+    return("Required object was not created.")
+  }
+
+  reason_parts <- character()
+
+  if (status %in% c("wrong_output", "wrong_output_and_function")) {
+    reason_parts <- c(reason_parts, "Final output did not match the expected result.")
+  }
+
+  if (status %in% c("wrong_function", "wrong_output_and_function") && !is.null(function_result)) {
+    if (length(function_result$missing_required) > 0) {
+      reason_parts <- c(
+        reason_parts,
+        paste0(
+          "Missing required function(s): ",
+          paste(function_result$missing_required, collapse = ", "),
+          "."
+        )
+      )
+    }
+
+    if (length(function_result$used_forbidden) > 0) {
+      reason_parts <- c(
+        reason_parts,
+        paste0(
+          "Used forbidden substitute function(s): ",
+          paste(function_result$used_forbidden, collapse = ", "),
+          "."
+        )
+      )
+    }
+  }
+
+  paste(reason_parts, collapse = " ")
 }
 
 resolve_submission_paths <- function(input_args, default_submission, script_dir) {
@@ -606,7 +657,7 @@ grade_submission <- function(submission_path, reference, object_specs, output_di
       used_functions = "",
       points_earned = 0L,
       points_possible = 1L,
-      message = source_error
+      point_loss_reason = build_point_loss_reason("error", source_error = source_error)
     )
   } else {
     assignment_calls <- extract_assignment_calls(parsed_submission)
@@ -625,7 +676,7 @@ grade_submission <- function(submission_path, reference, object_specs, output_di
               used_functions = "",
               points_earned = 0L,
               points_possible = 1L,
-              message = ""
+              point_loss_reason = build_point_loss_reason("missing")
             )
           )
         }
@@ -657,7 +708,7 @@ grade_submission <- function(submission_path, reference, object_specs, output_di
           used_functions = function_result$used_functions,
           points_earned = if_else(is_correct, 1L, 0L),
           points_possible = 1L,
-          message = ""
+          point_loss_reason = build_point_loss_reason(status, function_result = function_result)
         )
       }
     )
@@ -672,7 +723,7 @@ grade_submission <- function(submission_path, reference, object_specs, output_di
     used_functions = "",
     points_earned = sum(grade_table$points_earned),
     points_possible = sum(grade_table$points_possible),
-    message = ""
+    point_loss_reason = ""
   )
 
   grade_report <- bind_rows(grade_table, total_row) |>

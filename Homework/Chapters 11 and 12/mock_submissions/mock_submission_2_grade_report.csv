@@ -1,4 +1,4 @@
-submission_file,submission_path,task,object_name,status,output_check,function_check,used_functions,points_earned,points_possible,message
+submission_file,submission_path,task,object_name,status,output_check,function_check,used_functions,points_earned,points_possible,point_loss_reason
 mock_submission_2.R,/Users/jjasser/Library/CloudStorage/OneDrive-RollinsCollege/Courses/DTA250/Code/DTA250Rollins/Homework/Chapters 11 and 12/mock_submissions/mock_submission_2.R,Task 1,book_title_clean,correct,TRUE,TRUE,trimws,1,1,
 mock_submission_2.R,/Users/jjasser/Library/CloudStorage/OneDrive-RollinsCollege/Courses/DTA250/Code/DTA250Rollins/Homework/Chapters 11 and 12/mock_submissions/mock_submission_2.R,Task 1,title_character_count,correct,TRUE,TRUE,nchar,1,1,
 mock_submission_2.R,/Users/jjasser/Library/CloudStorage/OneDrive-RollinsCollege/Courses/DTA250/Code/DTA250Rollins/Homework/Chapters 11 and 12/mock_submissions/mock_submission_2.R,Task 1,title_prefix,correct,TRUE,TRUE,substr,1,1,
